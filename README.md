@@ -19,6 +19,13 @@ The data is retrieved via URls in the `region.txt` file for all regions in WOF (
 * https://github.com/locationtech/spatial4j
 
 
+# Generating the regions.txt file
+
+- check out the `whosonfirst-data/whosonfirst-data` Github project in the same folder as this repo.
+
+  
+    python src/main/python/generate_wof_url_lists.py
+
 
 
 # Running the tests

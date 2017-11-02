@@ -22,6 +22,8 @@ public class WofJTsValidityTest {
     @Test
     public void testJtsValidity() throws IOException, ParseException {
         List<String> placetypes = new ArrayList();
+
+        // add more placetypes to read more lits
         placetypes.add("region");
         for(String placetype : placetypes) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream(format("data/%s.txt", placetype))));
