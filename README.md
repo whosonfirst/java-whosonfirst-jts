@@ -1,10 +1,12 @@
-# java-whosonfirst-jts
+# A testing project for Whos-on-first
 
 Java tools for working with Who's On First documents and the Java Topology Suite (JTS)
 
-## Important
+This repo is testing the validity of shapes from https://github.com/whosonfirst-data/whosonfirst-data
 
-Too soon. Move along.
+The libraries used are the ones that Elasticsearch uses to parse shapes, hopefully we by this can make the shapes more indexing-friendly.
+
+The data is retrieved via URls in the `region.txt` file for all regions in WOF (to start with).
 
 ## Contributors
 
@@ -15,3 +17,11 @@ Too soon. Move along.
 * https://github.com/whosonfirst-data/whosonfirst-data/issues/975
 * https://sourceforge.net/projects/jts-topo-suite/
 * https://github.com/locationtech/spatial4j
+
+
+
+
+# Running the tests
+
+    .gradlew test
+    open build/reports/tests/test/index.html
