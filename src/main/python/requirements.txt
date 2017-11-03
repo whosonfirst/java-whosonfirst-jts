@@ -1,0 +1,7 @@
+shapely
+elasticsearch>=2.0.0
+geojson
+psutil
+psycopg2
+geomet
+requests

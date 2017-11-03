@@ -1,0 +1,83 @@
+{
+    "wof": {
+        "dynamic": "strict",
+        "_all": {
+            "enabled": false
+        },
+        "properties": {
+            "iso_country": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "shape": {
+                "type": "geo_shape",
+                "tree": "quadtree",
+                "precision": "100m"
+            },
+            "suggest_name": {
+              "properties": {
+                "input": {
+                  "type": "string"
+                },
+                "weight": {
+                  "type": "long"
+                },
+                "context": {
+                  "properties": {
+                    "placetype": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "payload": {
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "shape_simple": {
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "coordinates": {
+                          "type": "double"
+                        }
+                      }
+                    },
+                    "bbox": {
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "coordinates": {
+                          "type": "double"
+                        }
+                      }
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "iso_country": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "wof_belongsto": {
+                "type": "long"
+            },
+            "wof_name": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "wof_parent_id": {
+                "type": "long"
+            },
+            "wof_placetype": {
+                "type": "string",
+                "index": "not_analyzed"
+            }
+        }
+    }
+}
