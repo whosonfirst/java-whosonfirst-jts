@@ -19,16 +19,17 @@ The data is retrieved via URls in the `region.txt` file for all regions in WOF (
 * https://github.com/locationtech/spatial4j
 
 
-# Installing a local elassticsearch server
+# Installing a local elasticsearch server and PostGIS
 
-    docker run -p 9200:9200 -p 9300:9300  -e "xpack.security.enabled=false" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:5.6.3
-    curl -X PUT http://localhost:9200/wofs/ 
+    docker run --name elastic -p 9200:9200 -p 9300:9300  -e "xpack.security.enabled=false" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:5.6.3
+    docker run --name postgis -p 5432:5432 -e POSTGRES_DB=postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=secret -d mdillon/postgis
+    curl -X PUT http://localhost:9200/wofs/
     curl -X PUT http://localhost:9200/wofs/_mapping/wof -d'@src/test/resources/els_mappings/wof.json'
 
 
 # Importing shapes into a Elasticsearch server
 
-    ELS_MAIN2_HOST=localhost ELS_MAIN2_PORT=9200 python src/main/python/import_wof_shapes.py
+    ./import_shapes.sh
 
 # Generating the regions.txt file
 

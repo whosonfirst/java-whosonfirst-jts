@@ -59,7 +59,7 @@ class SimplifyUtils():
 
     def simplify_shape_using_postgis(self, geoJson):
         try:
-          conn = psycopg2.connect(
+          self.conn = psycopg2.connect(
             dbname=os.environ['PSQL_MAIN_DATABASE'],
             port=os.environ['PSQL_MAIN_PORT'],
             host=os.environ['PSQL_MAIN_HOST'],
@@ -80,7 +80,6 @@ class SimplifyUtils():
     def remove_holes(geometry):
         if geometry['type'] == 'Polygon':
             coords = geometry['coordinates']
-            # pprint(json.dumps(doc['shape']))
             newCoords = []
             newCoords.append(coords[0])
             print "removed {} holes".format(len(coords) - 1)
@@ -93,5 +92,4 @@ class SimplifyUtils():
                 newPols.append([pol[0]])
                 print "removed {} holes".format(len(pol) - 1)
             geometry['coordinates'] = newPols
-        pprint(json.dumps(geometry))
 
