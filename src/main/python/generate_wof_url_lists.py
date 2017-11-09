@@ -19,7 +19,7 @@ script_path = os.path.dirname(os.path.realpath(__file__))
 import_dirs = ['823', '856', '857', '858', '859', '874', '890', '907', '101', '102', '136', '404', '420', '421']
 
 # add more placetypes to generate more lists
-placetypes=['region']
+placetypes=['country', 'region']
 
 
 def generate_wof_lists():
